@@ -9,6 +9,17 @@
 - 추가 dependencies : JPA, QueryDSL
 - Java 18
 
+### View
+
+<img width="1432" alt="project_img00" src="https://user-images.githubusercontent.com/72004176/200818008-f7b7f0a4-e0f3-4fa8-90b9-58e810a04261.png">
+<img width="1434" alt="project_img01" src="https://user-images.githubusercontent.com/72004176/200818013-146e1bf2-4fb0-4f46-aa7e-7b555c606103.png">
+<img width="1434" alt="project_img02" src="https://user-images.githubusercontent.com/72004176/200818016-dd14525b-abed-4116-b0c0-c480091fe508.png">
+<img width="1431" alt="project_img03" src="https://user-images.githubusercontent.com/72004176/200818022-8ea425c7-11f4-4439-87a0-879f729d977a.png">
+<img width="1432" alt="project_img04" src="https://user-images.githubusercontent.com/72004176/200818024-2335e6a7-aba3-40a9-87c6-7ac38355fe87.png">
+<img width="1434" alt="project_img05" src="https://user-images.githubusercontent.com/72004176/200818026-822862e0-8cd8-49ee-91c3-d7f6cad47205.png">
+<img width="1429" alt="project_img06" src="https://user-images.githubusercontent.com/72004176/200818029-bef5c873-f58a-4129-946c-b6487798db6d.png">
+<img width="1429" alt="project_img07" src="https://user-images.githubusercontent.com/72004176/200818035-a1c9866f-2d6c-449a-91fb-377d9ff578f1.png">
+
 ### 고민 및 궁금증 및 개선(?)사항
 
 - queryDSL 을 사용할 필요가 있을까? 현재 JPA 만 사용해도 되지 않을까?
