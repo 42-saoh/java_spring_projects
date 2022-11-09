@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link rel="stylesheet" th:href="@{/css/base.css}"/>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+  <style>
+
+    .container {
+      max-width: 560px;
+    }
+
+    .field-error {
+      border-color: #dc3545;
+      color: #dc3545;
+    }
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="py-5 text-center">
+    <h2 th:text="#{page.addBoard}"></h2>
+  </div>
+
+  <h4 class="mb-3">게시글 입력</h4>
+
+  <form th:action="@{/boards/add}" enctype="multipart/form-data" th:object="${board}" method="post">
+    <div>
+        <label for="title" th:text="#{label.board.title}"></label>
+      <input type="text" id="title" th:field="*{title}"
+             th:errorclass="field-error" class="form-control" placeholder="제목을 입력하세요">
+      <div class="field-error" th:errors="*{title}">
+        제목 오류
+      </div>
+    </div>
+    <div>
+        <label for="content" th:text="#{label.board.content}" ></label>
+      <input type="text" id="content" th:field="*{content}"
+             th:errorclass="field-error" class="form-control" placeholder="내용을 입력하세요">
+      <div class="field-error"th:errors="*{content}">
+        내용 오류
+      </div>
+    </div>
+    <div>
+        <label for="file" th:text="#{label.board.file}"></label>
+        <input type="file" id="file" name="file" class="form-control">
+    </div>
+    <hr class="my-4">
+    <div class="row">
+      <div class="col">
+        <button class="w-100 btn btn-primary btn-lg" type="submit" th:text="#{button.save}">저장</button> </div>
+      <div class="col">
+        <button class="w-100 btn btn-secondary btn-lg"
+                onclick="location.href='boardList.html'"
+                th:onclick="|location.href='@{/boards}'|"
+                type="button" th:text="#{button.cancel}">취소</button>
+      </div>
+    </div>
+  </form>
+</div>
+</body>
+</html>

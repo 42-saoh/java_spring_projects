@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/base.css}"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <style>
+        .container {
+            max-width: 560px;
+        } </style>
+</head>
+<body>
+<div class="container">
+    <div class="py-5 text-center">
+        <h2 th:text="#{page.board}"></h2> </div>
+    <div>
+        <h2 th:if="${param.status}" th:text="'저장완료'"></h2>
+        <label for="id"  th:text="#{label.board.id}"></label>
+        <input type="text" id="id" name="id" class="form-control" value="1" th:value="${board.id}" readonly>
+    </div>
+    <div>
+        <label for="tittle"  th:text="#{label.board.title}"></label>
+        <input type="text" id="tittle" name="tittle" class="form-control" value="1" th:value="${board.title}" readonly>
+    </div>
+    <div>
+        <label for="content"  th:text="#{label.board.content}"></label>
+        <input type="text" id="content" name="content" class="form-control" value="10" th:value="${board.content}" readonly>
+    </div>
+    <div>
+        <label for="createdAt"  th:text="#{label.board.createdAt}"></label>
+        <input type="text" id="createdAt" name="createdAt" class="form-control" value="10000" th:value="${board.createdAt} ? ${#temporals.format(board.createdAt,'yyyy-MM-dd HH:mm')}" readonly>
+    </div>
+    <div>
+        <label for="fileName"  th:text="#{label.board.file}"></label>
+        <div>
+            <a th:href="@{/boards/download/{fileName}(fileName=${board.fileUuidName})}" id="fileName" th:text="${board.fileName}"> </a>
+        </div>
+    </div>
+    <hr class="my-4">
+    <div class="row">
+        <div class="col">
+            <button class="w-100 btn btn-primary btn-lg"
+                    th:onclick="|location.href='@{/boards/modify/{id}(id=${board.id})}'|"
+                    onclick="location.href='modifyBoard.html'" type="button" th:text="#{page.updateBoard}"></button> </div>
+        <div class="col">
+            <form action="#" th:action="@{'/boards/{id}'(id=${board.id})}" th:method="delete" >
+            <input type="hidden" name="_method" value="delete" />
+                <button class="w-100 btn btn-primary btn-lg" type="submit" th:text="#{button.delete}"> </button> </form> </div>
+        <div class="col">
+            <button class="w-100 btn btn-secondary btn-lg"
+                    th:onclick="|location.href='@{/boards}'|"
+                    onclick="location.href='boards.html'" type="button" th:text="#{page.boards}"></button> </div>
+    </div>
+</div>
+</body>
+</html>
